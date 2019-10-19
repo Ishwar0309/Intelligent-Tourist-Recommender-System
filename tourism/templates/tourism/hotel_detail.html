@@ -1,0 +1,19 @@
+{% extends "tourism/base.html" %}
+{% block content %}
+	<form method = "post" action="{% url 'cart' %}"> {% csrf_token %}
+	<article class="media content-section">
+		<img class="rounded-circle article-img" src= "SADHotel.jpg" >
+	  <div class="media-body">
+	    <div class="article-metadata">
+	    <h2 id="hotelName" class="article-title" > {{ object.propertyName }} </h2>
+	    <p class="article-content">{{ object.address }}</p>
+		<p class="article-content">{{ object.hotelDescription }}</p>		    
+	  </div>
+		   <input type="hidden" id="hotelId" name="hotelId" value={{ object.id }}>
+
+		   <!--<input type="hidden" id="hotelName" name="hotelName" value={{ object.propertyName }}>-->
+		  <button type="submit" class="btn btn-info"> Add to cart </button>
+
+	</article>
+	</form>
+{% endblock content %}

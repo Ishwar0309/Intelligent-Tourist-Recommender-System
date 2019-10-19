@@ -1,0 +1,41 @@
+
+{% extends "tourism/base.html" %}
+{% load crispy_forms_tags %}
+{% load static %}
+
+
+
+
+
+
+{% block content %}
+
+<div class = "container">
+
+      <div class = "row">
+        {% for item in cart %}
+
+          <div class="col-md-4">
+            <div class="card mt-4">
+              <div class="card-body">
+                <img class="card-img-top" src="SADHotel.jpg" alt="Card image" style="width:100%">
+                <h4 class="card-title">{{item.hotel.propertyName}}</h4>
+                <p class="card-text">{{item.hotel.address}}</p>
+                  <div class="container" >
+
+                     <a href="{% url 'itemDelete' pk=item.hotel.id %}" class="btn btn-primary stretched-link">Delete from Cart</a>
+                      </div>
+              </div>
+
+            </div>
+
+
+          </div>
+        <br>
+        <br>
+        {% endfor %}
+
+      </div>
+
+  </div>
+{% endblock %}
