@@ -35,7 +35,7 @@ displayFacilitesRoom = sorted(roomFacScore.items(), key =
              lambda kv:(-kv[1], kv[0]))
 
 displayFacilitesHotel = sorted(hotelFacScore.items(), key = 
-             lambda kv:(-kv[1]: kv[0]))
+             lambda kv:(-kv[1], kv[0]))
 
 return displayFacilitesHotel[:12],displayFacilitesRoom[:12]
 
